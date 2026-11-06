@@ -26,5 +26,5 @@ estrutura: classe Forma com {x, y, z, palavra, progresso}. array de formas ativa
 
 oq irei escrever aq ->
 
-pedi ajuda ao copilot para me explicar como fazer a minha ideia, pois não sabia como concretiza-la. para cada lane, defino uma constante com as coordenadas de inicio e fim e a letra para premir. crio tbm uma variavel para os circulos/notas.
-Para adicionar um circulo periodicamente, uso o if com a frameCount, onde dentro aleatoriza onde sai uma nota e a sua lane. 
+pedi ajuda ao copilot para me explicar como fazer a minha ideia, pois não sabia como concretiza-la. para cada lane, é definido uma constante com as coordenadas de inicio e fim e a letra para premir. crio tbm uma variavel para os circulos/notas.
+Para adicionar um circulo periodicamente, uso o if com a frameCount, onde dentro aleatoriza onde sai uma nota e a sua lane. Para a acelaração do circulo e o seu crescimento ao aproximar-se, uso for (const note of notes) e dentro tem a const lane, com a const x, y e diameter, 
