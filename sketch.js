@@ -1,5 +1,9 @@
 //colours
 let bgColour = [64, 62, 122];
+let red = [166, 22, 41];
+let green = [16, 156, 51];
+
+let points = 0;
 
 //lanes para oas notas andarem e as letras
 const lanes = [
@@ -68,7 +72,7 @@ function draw() {
   
     // resultado do hit ou miss da nota (e mudança de cor)
     if (y > targetY && note.outcome) {
-      fill(note.outcome === "correct" ? "green" : "red");
+      fill(note.outcome === "correct" ? green : red);
     } else {
       fill(255);
     }
@@ -83,6 +87,23 @@ function draw() {
   }
   
   notes = notes.filter(note => note.t <= 1);
+
+  //############################ PONTUAÇÂO ############################
+  for (const note of notes) {
+    if (note.outcome === "correct" && !note.scored) {
+      note.scored = true;
+      points++;
+    }
+  }
+
+
+  fill(255, 100);
+  rectMode(CORNER);
+  rect(windowWidth * 0.5 / 16, windowHeight * 0.5 / 16, windowWidth * 1.5 / 16, windowHeight * 1 / 16, 50);
+
+  fill(255);
+  textSize(32);
+  text(points, windowWidth * 1.25 / 16, windowHeight * 1 / 16);
   
 
   //####################### LETRAS #########################
